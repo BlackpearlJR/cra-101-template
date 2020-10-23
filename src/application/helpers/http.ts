@@ -1,6 +1,6 @@
 export default function getQuery(): any{
-  if(typeof window === undefined) return null;
-  const location = window.location;
+  if (typeof window === 'undefined') return null;
+  const { location } = window;
 
   const queryStrings = location && location.search.replace('?', '');
 

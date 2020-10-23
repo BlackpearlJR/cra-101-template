@@ -2,17 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from '@/routes';
 import { ThemeProvider } from 'styled-components';
-import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import { configureStore } from '@/application/redux/store';
+import * as serviceWorker from '@/serviceWorker';
 
 import defaultTheme from '@/views/styles/themes/default/index';
 import GlobalStyle from '@/views/styles/normalize';
 
+const store = configureStore();
+
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle />
-      <Routes />
-    </ThemeProvider>
+      <ThemeProvider theme={defaultTheme}>
+    <Provider store={store}>
+        <GlobalStyle />
+        <Routes />
+    </Provider>
+      </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

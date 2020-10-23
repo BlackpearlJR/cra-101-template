@@ -1,26 +1,26 @@
-interface Location{
+interface LocationInterface{
   hash: string;
   pathname: string;
   search: string;
   state: unknown;
 }
 
-interface History{
+interface HistoryInterface{
   action: string;
-  length: number;
-  location: Location;
+  // length?: number;
+  location: LocationInterface;
 }
 
 interface RouterInterface{
   asPath: string;
   pathname: string;
-  goBack(): void;
-  goForward(): void;
-  push(path: string, state?: unknown): void;
-  replace(path: string, state?: unknown): void;
-  history: History;
+  goBack?(): any;
+  goForward?(): any;
+  history?: HistoryInterface;
   query: any;
   isExact: boolean;
+  push(to: string, state?: unknown): void;
+  replace(to: string, state?: unknown): void;
   search: string;
   state: unknown;
 }

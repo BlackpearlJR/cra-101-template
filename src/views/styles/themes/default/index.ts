@@ -39,7 +39,7 @@ const colors = {
     light: '#c7c7c7',
     dark: '#191e28'
   },
-  gold:{
+  gold: {
     default: '#b69034',
     light: '#e0ca93'
   },
