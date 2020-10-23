@@ -1,0 +1,115 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+      "semi": "error",
+      "@typescript-eslint/semi": "error",
+      "react/jsx-filename-extension": [
+        1,
+        { 
+          "extensions": [".ts", ".js", ".jsx", ".tsx"]
+        }
+      ],
+      "react/jsx-uses-react": "warn",
+      "react/jsx-uses-vars": ["error"],
+      "react/jsx-fragments": "off",
+      "no-const-assign": "warn",
+      "no-this-before-super": "warn",
+      "no-undef": "warn",
+      "no-unreachable": "warn",
+      "no-unused-vars": "warn",
+      "constructor-super": "warn",
+      "valid-typeof": "warn",
+      "strict": 0,
+      "experimentalDecorators": 0,
+      "no-console": 0,
+      "no-undefine": 0,
+      "object-curly-spacing": [ "error", "always" ],
+      "space-before-blocks": ["error", "never"],
+      "comma-dangle": ["error", "never"],
+      "arrow-parens": ["error", "as-needed"],
+      "max-len": [
+        "error",
+        { 
+          "code": 120,
+          "tabWidth": 2,
+          "ignoreComments": true,
+          "ignoreTrailingComments": true,
+          "ignoreUrls": true,
+          "ignoreStrings": true,
+          "ignoreRegExpLiterals": true
+        }
+      ],
+      "camelcase": "off",
+      "react/prop-types": "off",
+      "no-new": 0,
+      "quotes": [2, "single"],
+      "new-cap": [2, {
+        "newIsCap": true,
+        "capIsNew": false
+      }],
+      "class-methods-use-this": "off",
+      "import/extensions": 0,
+      "semi-style": ["error", "last"],
+      "linebreak-style": 0,
+      "operator-linebreak": [
+        2,
+        "before",
+        {
+          "overrides": {
+            "+=": "none",
+            "&&": "before"
+          }
+        }
+      ],
+      "import/no-unresolved": [
+        "error",
+        {
+          "commonjs": true,
+          "caseSensitive": true
+        }
+      ],
+      "no-use-before-define": [
+        "error",
+        { "variables": false }
+      ]
+    },
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "^16.12.0"
+      },
+      "import/resolver": {
+        "alias": {
+          "map": [
+            ["@", "./src/"],
+            ["@public", "./public/"]
+          ],
+          "extensions": [".ts", ".js", ".jsx", ".tsx", ".json"]
+        }
+      }
+    }
+}
