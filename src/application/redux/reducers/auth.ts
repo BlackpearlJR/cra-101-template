@@ -1,5 +1,6 @@
 import {
   SET_LOGIN,
+  SET_LOGOUT,
   SET_TOKEN
 } from '../types.d';
 
@@ -14,6 +15,12 @@ const auth = (state = initialState, action: any) => {
       return {
         ...state,
         isLogin: true
+      };
+
+    case SET_LOGOUT:
+      return {
+        ...state,
+        isLogin: false
       };
 
     case SET_TOKEN:

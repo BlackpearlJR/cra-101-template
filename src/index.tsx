@@ -13,12 +13,12 @@ const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>
-      <ThemeProvider theme={defaultTheme}>
-    <Provider store={store}>
-        <GlobalStyle />
-        <Routes />
-    </Provider>
-      </ThemeProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <Provider store={store}>
+          <GlobalStyle />
+          <Routes />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
